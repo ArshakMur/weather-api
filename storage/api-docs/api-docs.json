@@ -1,0 +1,143 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Weather API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/weather/get-by-city": {
+            "get": {
+                "tags": [
+                    "Weather"
+                ],
+                "summary": "get weather from different sources",
+                "description": "YourController description.",
+                "operationId": "cef3a9154c7bfa246f6422793b561c7c",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "Name of city",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response description",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "Service2": {
+                                            "properties": {
+                                                "tempInCelsius": {
+                                                    "type": "number",
+                                                    "format": "float"
+                                                },
+                                                "windSpeed": {
+                                                    "type": "number",
+                                                    "format": "float"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "Service1": {
+                                            "properties": {
+                                                "tempInCelsius": {
+                                                    "type": "number",
+                                                    "format": "float"
+                                                },
+                                                "windSpeed": {
+                                                    "type": "number",
+                                                    "format": "float"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request response description",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "The city is required"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/weather/get-average-by-city": {
+            "get": {
+                "tags": [
+                    "Weather"
+                ],
+                "summary": "get weather average from different sources",
+                "description": "YourController description.",
+                "operationId": "fd8dcfb229d17b1580228c200d870a5b",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "Name of city",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response description",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "tempInCelsius": {
+                                            "type": "number",
+                                            "format": "float"
+                                        },
+                                        "windSpeed": {
+                                            "type": "number",
+                                            "format": "float"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request response description",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "The city is required"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
